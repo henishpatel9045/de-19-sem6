@@ -39,6 +39,7 @@ def createlisting(request):
         if form.is_valid():
             now = datetime.now()                                                #save date created with current timezone
             fs = form.save(commit=False)
+            print(fs)
             fs.lister = request.user                                            #save info not listed at forms.py
             fs.created = now
             fs.save()
